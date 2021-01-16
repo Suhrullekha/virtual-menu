@@ -1,44 +1,49 @@
 <!DOCTYPE html>
 <html>
-    <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
-    <!-- we import arjs version without NFT but with marker + location based support -->
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-    <body style="margin : 0px; overflow: hidden;">
-        <a-scene
-            embedded
-            renderer="logarithmicDepthBuffer: true;"
-            arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3; sourceWidth:1280; sourceHeight:960;'
-        >
-            <!-- <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box> -->
-            <!-- <a-assets>
+<script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
+<!-- we import arjs version without NFT but with marker + location based support -->
+<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+
+<body style="margin : 0px; overflow: hidden;">
+    <a-scene embedded renderer="logarithmicDepthBuffer: true;"
+        arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3; sourceWidth:1280; sourceHeight:960;'>
+        <!-- <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box> -->
+        <!-- <a-assets>
                 <a-asset-item id="cupcake" src="scene.gltf"></a-asset-item>
             </a-assets> -->
-            
-            <a-marker
-                type="barcode"
-                value="8"
-                smooth=true
-                smoothCount=5
-                smoothTolernace=0.2
-                smoothThreshold=2
-            >
-                <!-- <a-box position="0 0.5 0" color="#4CC3D9"></a-box> -->
-                <!-- <a-obj-model src="donut.obj"></a-obj-model> -->
-                <a-entity
-                    position="0 0.1 0"
-                    scale="0.005 0.005 0.005"
-                    gltf-model="scene.gltf"
-                ></a-entity>
-                <!-- <a-gltf-model src="scene.gltf"></a-gltf-model> -->
-                <!-- <a-gltf-model position="0 0.1 0" scale="0.002 0.002 0.002" src="#cupcake"></a-gltf-model> -->
-                <!-- <a-entity
+
+        <a-marker type="barcode" value="10" smooth=true smoothCount=5 smoothTolernace=0.2 smoothThreshold=2>
+
+            <a-entity position="0 0.1 0" scale="0.0025 0.0025 0.0025" gltf-model="models/cupcake/scene.gltf"></a-entity>
+
+            <!-- <a-box position="0 0.5 0" color="#4CC3D9"></a-box> -->
+
+            <!-- <a-obj-model src="donut.obj"></a-obj-model> -->
+            <!-- <a-gltf-model src="scene.gltf"></a-gltf-model> -->
+            <!-- <a-gltf-model position="0 0.1 0" scale="0.002 0.002 0.002" src="#cupcake"></a-gltf-model> -->
+            <!-- dinosaur ->>> <a-entity
                 position="0 -1 0"
                 scale="0.05 0.05 0.05"
                 gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"
                 ></a-entity> -->
-            </a-marker>
-            <!-- <a-sky color="#ECECEC"></a-sky> -->
-            <a-entity camera></a-entity>
-        </a-scene>
-    </body>
+        </a-marker>
+
+        <a-marker type="barcode" value="4" smooth=true smoothCount=5 smoothTolernace=0.2 smoothThreshold=2>
+            <a-entity position="0 0.1 0" scale="4.5 4.5 4.5" gltf-model="models/donut/scene.gltf"></a-entity>
+        </a-marker>
+
+        
+        <!-- <a-marker type="barcode" value="12" smooth=true smoothCount=5 smoothTolernace=0.2 smoothThreshold=2>
+            <a-entity position="0 0.1 0" scale="0.15 0.15 0.15" gltf-model="models/ramen/scene.gltf"></a-entity>
+        </a-marker> -->
+
+        <a-marker type="barcode" value="36" smooth=true smoothCount=5 smoothTolernace=0.2 smoothThreshold=2>
+            <!-- <a-box position="0 0.5 0" color="#DCC31C"></a-box> -->
+            <a-entity position="0 0.1 0" scale="0.15 0.15 0.15" gltf-model="models/ramen/scene.gltf"></a-entity>
+        </a-marker>
+
+        <a-entity camera></a-entity>
+    </a-scene>
+</body>
+
 </html>
