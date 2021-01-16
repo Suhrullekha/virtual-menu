@@ -4,14 +4,29 @@
     <!-- we import arjs version without NFT but with marker + location based support -->
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
     <body style="margin : 0px; overflow: hidden;">
-        <a-scene embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
+        <a-scene embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3; sourceWidth:1280; sourceHeight:960;'>
             <!-- <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box> -->
-            <a-marker type="barcode" value="8">
+            <!-- <a-assets>
+                <a-asset-item id="cupcake" src="scene.gltf"></a-asset-item>
+            </a-assets> -->
+            
+            <a-marker
+                type="barcode"
+                value="8"
+                smooth=true
+                smoothCount=5
+                smoothTolernace=0.2
+                smoothThreshold=2
+            >
                 <!-- <a-box position="0 0.5 0" color="#4CC3D9"></a-box> -->
                 <!-- <a-obj-model src="donut.obj"></a-obj-model> -->
-                <a-gltf-model src="scene.gltf"></a-gltf-model>
-
-
+                <a-entity
+                    position="0 0.1 0"
+                    scale="0.005 0.005 0.005"
+                    gltf-model="scene.gltf"
+                ></a-entity>
+                <!-- <a-gltf-model src="scene.gltf"></a-gltf-model> -->
+                <!-- <a-gltf-model position="0 0.1 0" scale="0.002 0.002 0.002" src="#cupcake"></a-gltf-model> -->
                 <!-- <a-entity
                 position="0 -1 0"
                 scale="0.05 0.05 0.05"
